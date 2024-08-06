@@ -1,0 +1,54 @@
+#include <iostream> //cin cout endl string
+using namespace std;
+int a,b,c;
+int op;
+bool mseguir = true;
+int main()
+{
+	do{
+		system("cls");
+		cout<<"Menu operaciones "<<endl;
+		cout<<"1. suma "<<endl;
+		cout<<"2. resta "<<endl;
+		cout<<"3. multiplicacion "<<endl;
+		cout<<"4. salir "<<endl;
+		cout<<"ingrese opcion "<<endl;
+		cin>>op;
+		switch(op)
+		{
+			case 1: system("cls");
+			        cout<<"ingrese el valor 1 "<<endl;
+			        cin>>a;
+			        cout<<"ingrese el valor 2 "<<endl;
+			        cin>>b;
+			        c=a+b;
+			        cout<<"la suma es "<<c<<endl;
+			        system("pause");
+			        break;
+			
+			case 2: system("cls");
+			        cout<<"ingrese el valor 1 "<<endl;
+			        cin>>a;
+			        cout<<"ingrese el valor 2 "<<endl;
+			        cin>>b;
+			        c=a-b;
+			        cout<<"la resta es "<<c<<endl;
+			        system("pause");
+			        break;
+				
+			case 3: system("cls");
+			        cout<<"ingrese el valor 1 "<<endl;
+			        cin>>a;
+			        cout<<"ingrese el valor 2 "<<endl;
+			        cin>>b;
+			        c=a*b;
+			        cout<<"la multiplicacion es "<<c<<endl;
+			        system("pause");
+			        break;
+				
+			case 4: mseguir =false;
+			        break;
+		}
+		
+	}while(mseguir == true);
+}
