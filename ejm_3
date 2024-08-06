@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int x=24;
+int y=44;
+
+//puntero: direccion de puntero, direccion enlazada y valor de direccion enlazada
+
+int *z; //puntero z
+int *w; //puntero w
+int main()
+{
+	
+	z=&x;
+	w=&y;
+	
+	cout<<"contenido de x "<<x<<endl;
+	cout<<"contenido de y "<<y<<endl;
+	
+	cout<<"direccion de memopria de x "<<&x<<endl;
+	cout<<"direccion de memopria de y "<<&y<<endl;
+	
+	cout<<"direccion de memopria de puntero *z "<<&z<<endl;
+	cout<<"direccion de memopria de puntero *w "<<&w<<endl;
+	
+	cout<<"contenido de z "<<z<<endl;
+	cout<<"contenido de w "<<w<<endl;
+	
+	*z=50;
+	cout<<"nuevo contenido de x "<<x<<endl;
+	
+	cout<<z<<endl;
+	cout<<*z<<endl;
+	cout<<&z<<endl;
+	
+}
