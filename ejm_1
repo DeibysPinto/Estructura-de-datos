@@ -1,0 +1,25 @@
+//activamos librerias
+#include <iostream>
+using namespace std;
+
+//definimos las variables
+int a;
+double b; //float
+string c;
+bool d; // faslse, true, 0 ó 1, No  YES, N Y
+
+//procedimiento o rutina principal
+int main()
+{
+	cin>>a; //leer o capturar
+	cin>>b;
+	cin>>c;
+	cin>>d;
+	
+	//mostrar el contenido de una variable
+	
+	cout<<a<<endl;
+	cout<<b<<endl;
+	cout<<c<<endl;
+	cout<<d<<endl;
+}
