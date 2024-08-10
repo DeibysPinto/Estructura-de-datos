@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int v1[5],v2[5],v3[5];
+int i;
+
+int main(){
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<"Ingrese elemento posicion de v1 ["<<i<<"]"<<endl;
+		cin>>v1[i];
+	}
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<"Ingrese elemento posicion de v2 ["<<i<<"]"<<endl;
+		cin>>v2[i];	
+	}
+	
+	for (i=0;i<=4;i++)
+	{
+		v3[i]=v1[i]+v2[i];
+		
+	}
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<v1[i]<<"\t";
+		
+	} 
+	
+	cout<<endl;
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<v2[i]<<"\t";
+		
+	}
+	
+	cout<<endl;
+	
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<v3[i]<<"\t";
+		
+	}
+	
+}
