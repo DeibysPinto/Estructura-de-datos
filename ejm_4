@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int vec[5];
+int i;
+
+int main(){
+	
+	for (i=0;i<=4;i++)
+	{
+		system("dir"); //clear
+		cout<<"Ingrese elemento posicion ["<<i<<"]"<<endl;
+		cin>>vec[i];
+	}
+	
+	for (i=0;i<=4;i++)
+	{
+		cout<<vec[i]<<"\t";
+	}
+}
