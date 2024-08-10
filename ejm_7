@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int vector[10];
+int i;
+
+int main()
+{
+	for (i=0;i<=9;i++)
+	{
+		cout<<"ingrese un numero impar ["<<i<<"]"<<endl;
+		cin>>vector[i];
+		
+		if(vector[i]%2==0)
+		{i--;
+			
+			cout<<"este numero es par "<<endl;
+		} 
+		else {
+			cout<<"su numero es impar "<<endl;
+		}
+			
+	}
+	
+	for(i=0;i<=9;i++)
+	
+		{
+			cout<<vector[i]<<"\t";
+		}
+	
+}
