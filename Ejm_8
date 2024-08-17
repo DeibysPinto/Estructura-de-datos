@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int x;
+int y;
+int v1[3];
+
+int main(){
+	
+	int x=10;
+	int y=20;
+	v1[0]=63;
+	v1[1]=50;
+	v1[2]=40;
+	
+}
