@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+struct persona{
+	int identificacion;
+	string nombre;
+	string apellido;
+	int edad;
+
+};
+
+persona clientes[5];
+
+int i;
+
+int main ()
+{
+	for (i=0;i<=4;i++)
+	{
+	cout<<"Ingrese identificacion "<<endl;
+	cin>>clientes[i].identificacion;
+	cout<<"Ingrese el nombre "<<endl;
+	cin>>clientes[i].nombre;
+	cout<<"Ingrese el apellido "<<endl;
+	cin>>clientes[i].apellido;
+	cout<<"Ingrese la edad "<<endl;
+	cin>>clientes[i].edad;
+}
+for (i=0;i<=4;i++)
+{
+	cout<<clientes[1].identificacion<<"\t"<<clientes[i].nombre<<"\t"<<clientes[i].apellido<<"\t"<<clientes[i].edad<<endl;
+}
+}
