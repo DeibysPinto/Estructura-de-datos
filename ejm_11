@@ -1,0 +1,44 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+stack <int> pila;
+int numero;
+int op;
+bool seguir=true;
+
+int main()
+{
+	do{
+		cout<<"menu pilas"<<endl;
+		cout<<"1. ingresar elementos"<<endl;
+		cout<<"2. muestre la cima"<<endl;
+		cout<<"3. eliminar elemento de la cima"<<endl;
+		cout<<"8. salir"<<endl;
+		cout<<"ingrese la opcion"<<endl;
+		cin>>op;
+		switch(op){
+			case 1: cout<<"ingrese elemento"<<endl;
+					cin>>numero;
+					pila.push(numero);
+					break;
+			case 2: cout<<"el elemento de la cima es: "<<endl;
+					cout<<pila.top();
+					system("pause");
+			case 3: pila.pop();
+					cout<<"elemento de la cima borrado"<<endl;
+					break;
+			case 4: cout<<"el tamano de la pila es "<<pila.size()<<endl;
+					system("pause");
+					break;
+			case 5: cout<<"el estado de la pila es "<<pila.empty()<<endl;
+					if (pila.empty()==true)
+					{
+						cout<<"pila vacia"<<endl;
+					}
+					else
+			case 8: seguir=false;
+					break;
+		}
+	}while(seguir==true);
+}
