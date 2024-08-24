@@ -1,0 +1,49 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+queue <int> cola;
+int numero;
+int op;
+bool seguir=true;
+
+int main()
+{
+	do{
+		cout<<"menu colas"<<endl;
+		cout<<"1. ingresar elementos"<<endl;
+		cout<<"2. primer elemento "<<endl;
+		cout<<"3. ultimo elemento"<<endl;
+		cout<<"4. eliminar primer elemento"<<endl;
+		cout<<"5. tamano de la cola"<<endl;
+		cout<<"9. salir"<<endl;
+		cout<<"ingrese la opcion"<<endl;
+		cin>>op;
+		switch(op){
+			case 1: cout<<"ingrese elemento"<<endl;
+					cin>>numero;
+					cola.push(numero);
+					break;
+			case 2: cout<<"el primer elemento es: ";
+					cout<<cola.front()<<endl;
+					system("pause");
+			case 3: cout<<"el ultimo elemento es: ";
+			        cout<<cola.back()<<endl;					
+					break;
+			case 4: cola.pop();
+			        cout<<"primer elmento de la cola eliminado"<<endl;
+			        break;
+			case 5: cout<<"el tamano de la cola es "<<cola.size()<<endl;
+					system("pause");
+					break;
+			case 6: cout<<"el estado de la cola es "<<cola.empty()<<endl;
+					if (cola.empty()==true)
+					{
+						cout<<"cola vacia"<<endl;
+					}
+					else
+			case 9: seguir=false;
+					break;
+		}
+	}while(seguir==true);
+}
