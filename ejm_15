@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+int n1,n2,rs;
+int op;
+bool seguir=true;
+
+void capturar()
+{
+	cout<<"ingrese el valor 1"<<endl;
+	cin>>n1;
+	cout<<"ingrese el valor 2"<<endl;
+	cin>>n2;
+}
+
+int suma(int x, int y)
+{
+	int rs1;
+	rs1=x+y;
+	return rs1;
+}
+
+int resta(int x, int y)
+{
+	int rs1;
+	rs1=x-y;
+	return rs1;
+}
+
+int multiplica(int x, int y)
+{
+	int rs1;
+	rs1=x*y;
+	return rs1;
+}
+
+int division(int x, int y)
+{
+	int rs1;
+	rs1=x/y;
+	return rs1;
+}
+
+int main()
+{
+	do{
+		cout<<"menu operaciones "<<endl;
+		cout<<"1. capturar datos"<<endl;
+		cout<<"2. suma"<<endl;
+		cout<<"3. restas"<<endl;
+		cout<<"4. multiplicacion"<<endl;
+		cout<<"5. division"<<endl;
+		cout<<"6. salir"<<endl;
+		cout<<"ingrese la opcion"<<endl;
+		cin>>op;
+		
+		switch(op)
+		{
+			case 1: capturar();
+				break;
+				
+			case 2:rs=suma(n1,n2);
+			    cout<<"la suma es "<<rs<<endl;
+			    system ("pause");
+				break;
+				
+			case 3:rs=resta(n1,n2);
+			    cout<<"la resta es "<<rs<<endl;
+			    system ("pause");
+				break;
+				
+			case 4:rs=multiplica(n1,n2);
+			    cout<<"la multiplicacion es "<<rs<<endl;
+			    system ("pause");
+				break;
+			
+			case 5:rs=division(n1,n2);
+			    cout<<"la division es "<<rs<<endl;
+			    system ("pause");
+				break;
+				
+			case 6:seguir=false;
+				break;
+		}
+		
+	}while(seguir==true);
+	
+}
