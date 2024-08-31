@@ -1,1 +1,48 @@
+#include <iostream>
+using namespace std;
 
+int n1,n2,rs;
+
+//con subrutinas
+
+void suma()
+{
+	rs=n1+n2;
+	cout<<"el resultado de la suma es "<<rs<<endl;
+}
+
+void captura()
+{
+	cout<<"ingrese el valor 1"<<endl;
+	cin>>n1;
+	cout<<"ingrese el valor 2"<<endl;
+	cin>>n2;
+	
+}
+
+void resta()
+{
+	rs=n1-n2;
+	cout<<"el resultado de la resta es "<<rs<<endl;
+}
+
+int main()
+{
+	captura();
+	suma();
+	resta();
+}
+
+//sin subrutinas
+
+int main()
+{
+	cout<<"ingrese el valor 1 "<<endl;
+	cin>>n1;
+	cout<<"ingrese el valor 2 "<<endl;
+	cin>>n2;
+	rs=n1+n2;
+	cout<<"el resultado de la suma es "<<rs<<endl;
+	rs=n1-n2;
+	cout<<"el valor d ela resta es "<<rs<<endl;
+}
