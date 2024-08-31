@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+struct datos {
+	int CodCli;
+	string NomCli;
+	string ApeCli;
+	int CantidadFotos;
+	float ValorFoto;
+};
+
+datos clientes[4] = {
+{1025,"Carlos","Fernandez",20,12500},
+{1020,"Oscar","Hidalgo",12,15500},
+{1130,"Juan","Peralta",11,17500},
+{1015,"Diana","Montoya",15,25000}
+};
+int op;
+int cod;
+bool seguir=true;
+
+int main(){
+	
+	do{
+		cout<<"Menu de opciones "<<endl;
+		cout<<"1. Ingresar datos"<<endl;
+		cout<<"2. Consultar por codigo"<<endl;
+		cout<<"3. Cantidad de fotos vendidas"<<endl;
+		cout<<"4. Eliminar cliente por codigo"<<endl;
+		cout<<"8. Salir"<<endl;
+		cout<<"Ingrese la opcion"<<endl;
+		cin>>op;
+		
+		switch(op)
+		{
+			case 1:for(int i=0;i<=3;i++)
+	             {
+	               system("cls");
+		           cout<<"codigo de cliente "<<endl;
+		           cin>>clientes[i].CodCli;
+		           cout<<"nombre cliente "<<endl;
+		           cin>>clientes[i].NomCli;
+		           cout<<"apellido cliente "<<endl;
+		           cin>>clientes[i].ApeCli;
+		           cout<<"cantidad de fotos "<<endl;
+		           cin>>clientes[i].CantidadFotos;
+		           cout<<"Valor de Foto "<<endl;
+		           cin>>clientes[i].ValorFoto;
+	             }
+				break;
+				
+			case 2: cout<<"ingrese el codigo a buscar"<<endl;
+			        cin>>cod;
+			        
+			        for(int i=0;i<=3;i++)
+			        {
+			        	if (clientes[i].CodCli==cod)
+			        	{
+			        		system("cls");
+			        		cout<<"cliente encontrado"<<endl;
+			        		cout<<clientes[i].CodCli<<endl;
+			        		cout<<clientes[i].NomCli<<endl;
+			        		i=10;
+						}
+						cout<<i<<endl;
+						system("pause");
+					}
+				break;
+				
+			case 3: cout<<"valor de ventas"<<endl;
+			        for(int i=0;i<=3;i++)
+					{
+						cout<<clientes[i].CodCli<<"\t"<<clientes[i].NomCli<<"\t"<<clientes[i].CantidadFotos<<"\t"<<clientes[i].ValorFoto<<"\t"<<clientes[i].CantidadFotos*clientes[i].ValorFoto<<endl;
+					}
+				break;
+				
+			case 4: 
+				break;
+			
+			case 8:seguir=false;
+				break;
+		}
+		
+	} 
+	
+	while(seguir==true);
+	
+}
