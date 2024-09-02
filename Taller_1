@@ -85,10 +85,10 @@ int main(){
 			        		system("cls");
 			        		cout<<"cliente "<<clientes[i].NomCli<<" ha sido eliminado"<<endl;
 			        		clientes[i].CodCli = 0;
-                            clientes[i].NomCli = "";
-                            clientes[i].ApeCli = "";
-                            clientes[i].CantidadFotos = 0;
-                            clientes[i].ValorFoto = 0.0;
+                                                clientes[i].NomCli = "";
+                                                clientes[i].ApeCli = "";
+                                                clientes[i].CantidadFotos = 0;
+                                                clientes[i].ValorFoto = 0.0;
 			        		break;
 						}
 						cout<<i<<endl;
