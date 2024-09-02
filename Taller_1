@@ -60,21 +60,40 @@ int main(){
 			        		cout<<"cliente encontrado"<<endl;
 			        		cout<<clientes[i].CodCli<<endl;
 			        		cout<<clientes[i].NomCli<<endl;
-			        		i=10;
+			        		break;
 						}
 						cout<<i<<endl;
-						system("pause");
 					}
 				break;
 				
-			case 3: cout<<"valor de ventas"<<endl;
+			case 3: system("cls");
+			        cout<<"valor de ventas"<<endl;
 			        for(int i=0;i<=3;i++)
 					{
 						cout<<clientes[i].CodCli<<"\t"<<clientes[i].NomCli<<"\t"<<clientes[i].CantidadFotos<<"\t"<<clientes[i].ValorFoto<<"\t"<<clientes[i].CantidadFotos*clientes[i].ValorFoto<<endl;
 					}
 				break;
 				
-			case 4: 
+			case 4: system("cls");
+			        cout<<"ingrese el codigo de cliente para elimiar"<<endl;
+			        cin>>cod;
+			        
+			        for(int i=0;i<=3;i++)
+			        {
+			        	if (clientes[i].CodCli==cod)
+			        	{
+			        		system("cls");
+			        		cout<<"cliente "<<clientes[i].NomCli<<" ha sido eliminado"<<endl;
+			        		clientes[i].CodCli = 0;
+                            clientes[i].NomCli = "";
+                            clientes[i].ApeCli = "";
+                            clientes[i].CantidadFotos = 0;
+                            clientes[i].ValorFoto = 0.0;
+			        		break;
+						}
+						cout<<i<<endl;
+					}
+			
 				break;
 			
 			case 8:seguir=false;
