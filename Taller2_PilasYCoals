@@ -1,0 +1,66 @@
+#include <iostream>
+#include <stack>
+#include <queue>
+using namespace std;
+
+stack <string> pila;
+queue <string> cola;
+
+string nombre;
+int op;
+int i;
+bool seguir=true;
+
+int main(){
+    
+    do{
+		cout<<"menu sistema de gestion de pacientes"<<endl;
+		cout<<"1. ingrese el nombre del paciente con cita"<<endl;
+		cout<<"2. ingrese el nombre del paciente sin cita"<<endl;
+		cout<<"3. atender paciente"<<endl;
+		cout<<"8. salir"<<endl;
+		cout<<"ingrese la opcion"<<endl;
+		cin>>op;
+		switch(op){
+			case 1: system("cls");
+			        cout<<"Ingrese el Nombre: ";
+					cin>>nombre;
+					pila.push(nombre);
+					break;
+			case 2: system("cls");
+			        cout<<"Ingrese el Nombre: ";
+					cin>>nombre;
+					cola.push(nombre);
+					break;
+			case 3: system("cls");
+			        if(pila.empty()==false){
+			            cout<<"Atendiendo pacientes con cita"<<endl;
+			           while(pila.empty()==false){
+			                  cout<<"El paciente "<<pila.top()<<" ha sido atendido"<<endl;
+			                  pila.pop();
+			                  system("pause");
+			             }
+			         } else {
+			             cout<<"No hay pacientes con cita para atender "<<endl;
+			         }
+			         
+			         system("pause");
+			         
+			         if(cola.empty()==false){
+			            cout<<"Atendiendo pacientes sin cita"<<endl;
+			           while(cola.empty()==false){
+			                  cout<<"El paciente "<<cola.front()<<" ha sido atendido"<<endl;
+			                  cola.pop();
+			                  system("pause");
+			             }
+			         } else {
+			             cout<<"No hay pacientes sin cita para atender "<<endl;
+			         }
+					break;
+					
+			case 8: seguir=false;
+					break;
+		}
+	}while(seguir==true);
+}
+    
