@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int f;
+int i;
+int numero;
+
+
+int main ()
+{
+	cout<<"Ingrese el # a calcular el factorial "<<endl;
+	cin>>numero;
+	for (i=1;i<=numero;i++)
+	{
+		f=f+i;
+		cout<<i<<endl;
+	}
+	cout<<f<<endl;
+}
