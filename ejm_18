@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int f=1;
+int i;
+int numero;
+
+
+int main ()
+{
+	cout<<"Ingrese el # a calcular el factorial "<<endl;
+	cin>>numero;
+	numero=4;
+	cout<<numero<<"! = ";
+	
+	for (i=numero;i>0;numero=i--)
+	{
+		f=f*i;
+		cout<<i;
+		if (i!=1)
+		{
+		cout<<" x ";
+		}
+	}
+	cout<<" = "<<f<<endl;
+}
