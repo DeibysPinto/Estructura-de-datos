@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int x;
+
+int calculo(int y)
+{
+	int rs;
+	rs=y*2;
+}
+
+int main()
+{
+	cout<<"Ingrese un numero "<<endl;
+	cin>>x;
+	calculo(x);
+}
