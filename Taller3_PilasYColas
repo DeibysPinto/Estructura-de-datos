@@ -1,53 +1,158 @@
 #include <iostream>
 #include <stack>
 #include <queue>
+
 using namespace std;
 
-stack <INT> bus;
-queue <INT> t1,t2,t3;
+stack <int> bus,AlNorte,AlSur,AlPortal;
+queue <int> t1,t2,t3;
 
+int cantidadpasajero = 0;
+string pasajeros = "El pasajero P";
 int op;
-int i;
 bool seguir=true;
+
 
 int main(){
     
     do{
 		cout<<"Menu de gestion de pasajeros"<<endl;
-		cout<<"1. "<<endl;
-		cout<<"2. "<<endl;
-		cout<<"3. "<<endl;
-		cout<<"4. "<<endl;
-		cout<<"5. "<<endl;
-		cout<<"6. "<<endl;
-		cout<<"7. "<<endl;
-		cout<<"9. salir"<<endl;
+		cout<<"1. Ingresar pasajero al bus "<<endl;
+		cout<<"2. Mover pasajeros a los torniquetes"<<endl;
+		cout<<"3. Mover pasajeros a los alimenatdores"<<endl;
+		cout<<"4. Mirar estadisticas"<<endl;
+		cout<<"6. salir"<<endl;
 		cout<<"ingrese la opcion"<<endl;
 		cin>>op;
 		switch(op){
 			case 1: system("cls");
-			        
+			        cantidadpasajero ++;
+			        cout<<pasajeros<< cantidadpasajero<<" a ingresado al bus"<<endl;
+			        bus.push(cantidadpasajero);
 					break;
+					
 			case 2: system("cls");
-			        
-					break;
+			        while (bus.empty()==false) {
+                      int pasajero = bus.top();
+                      bus.pop();
+                       if (t1.size() < 5) {
+                           t1.push(pasajero);
+                           cout<<"El pasajero P"<<pasajero<<" ha sido dirigido al torniquete t1"<<endl;
+                           system("pause");
+                        } else if (t2.size() < 3) {
+                           t2.push(pasajero);
+                           cout<<"El pasajero P"<<pasajero<<" ha sido dirigido al torniquete t2"<<endl;
+                           system("pause");
+                        } else {
+                          t3.push(pasajero);
+                          cout<<"El pasajero P"<<pasajero<<" ha sido dirigido al torniquete t3"<<endl;
+                          system("pause");
+                        }
+                    }
+                    break;
+					
 			case 3: system("cls");
-			        
-					break;
-			case 4: system("cls");
-			        
-					break;
-			case 5: system("cls");
-			        
-					break;
-			case 6: system("cls");
-			        
-					break;
-			case 7: system("cls");
+			 while (t1.empty()==false) {
+			       	  int pasajero = t1.front();
+			 	      int eleccion;
+                      cout<<"Elige a donde quieres uqe vaya el pasajero P"<<pasajero<<endl;
+                      cout<<"1. Alimentador Norte"<<endl<<"2. Alimentador Sur"<<endl<<"3. Salir del portal"<<endl;
+                      cin>>eleccion;
+                      t1.pop();
+                      if(eleccion==1){
+                      	AlNorte.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del norte"<<endl;
+					  }
+					  else if (eleccion==2){
+					  	AlSur.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del sur"<<endl;
+					  }
+					  
+					  else if (eleccion==3){
+					  	AlPortal.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido del portal"<<endl;
+					  }
+					  
+					  else {
+					  	cout<<"opcion invalida"<<endl;
+					  	return main();
+					  }
+					  
+				}
+				
+				//torniquete 2
+				
+				while (t2.empty()==false) {
+			       	  int pasajero = t2.front();
+			 	      int eleccion;
+                      cout<<"Elige a donde quieres uqe vaya el pasajero P"<<pasajero<<endl;
+                      cout<<"1. Alimentador Norte"<<endl<<"2. Alimentador Sur"<<endl<<"3. Salir del portal"<<endl;
+                      cin>>eleccion;
+                      t1.pop();
+                      if(eleccion==1){
+                      	AlNorte.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del norte"<<endl;
+					  }
+					  else if (eleccion==2){
+					  	AlSur.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del sur"<<endl;
+					  }
+					  
+					  else if (eleccion==3){
+					  	AlPortal.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido del portal"<<endl;
+					  }
+					  
+					  else {
+					  	cout<<"opcion invalida"<<endl;
+					  }
+					  return main();
+				}
+				
+				//torniquete 3
+				
+				while (t3.empty()==false) {
+			       	  int pasajero = t3.front();
+			 	      int eleccion;
+                      cout<<"Elige a donde quieres uqe vaya el pasajero P"<<pasajero<<endl;
+                      cout<<"1. Alimentador Norte"<<endl<<"2. Alimentador Sur"<<endl<<"3. Salir del portal"<<endl;
+                      cin>>eleccion;
+                      t1.pop();
+                      if(eleccion==1){
+                      	AlNorte.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del norte"<<endl;
+					  }
+					  else if (eleccion==2){
+					  	AlSur.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido en el alimentador del sur"<<endl;
+					  }
+					  
+					  else if (eleccion==3){
+					  	AlPortal.push(pasajero);
+                      	cout<<"El pasajero p"<<pasajero<<" ha salido del portal"<<endl;
+					  }
+					  
+					  else {
+					  	cout<<"opcion invalida"<<endl;
+					  }
+					  return main();
+				}
 			        
 					break;
 					
-			case 9: seguir=false;
+			case 4: system("cls");
+			cout<<"El bus tiene "<<bus.size()<<" personas"<<endl;
+			cout<<"El torniquete 1 tiene "<<t1.size()<<" personas"<<endl;
+			cout<<"El torniquete 2 tiene "<<t2.size()<<" personas"<<endl;
+			cout<<"El torniquete 3 tiene "<<t3.size()<<" personas"<<endl;
+			cout<<"El alimentador Norte tiene "<<AlNorte.size()<<" personas"<<endl;
+			cout<<"El alimentador Sur tiene "<<AlSur.size()<<" personas"<<endl;
+			cout<<"El portal tiene "<<AlPortal.size()<<" personas"<<endl;
+			        
+					break;
+		
+					
+			case 6: seguir=false;
 					break;
 		}
 	}while(seguir==true);
