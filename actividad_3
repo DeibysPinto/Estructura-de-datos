@@ -1,0 +1,31 @@
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+int m1[8][8];
+int f,c;
+
+int main()
+{
+	
+	for(f=0;f<7;f++)
+	{
+		for(c=0;c=7;c++)
+		{
+			cout<<"ingrese elemento ["<<f<<"]["<<c<<"]"<<endl;
+			
+			cin>>m1[f][c];
+		}
+	}
+	
+	for(f=0;f<7;f++)
+	{
+		for(c=0;c=7;c++)
+		{
+			cout<<m1[f][c]<<endl;
+		}
+		cout<<"/n";
+	}
+	
+	
+}
