@@ -1,31 +1,85 @@
 #include <iostream>
-#include <stdio.h>
 using namespace std;
 
-int m1[8][8];
-int f,c;
+float m1[8][8]={
+{9,0,0,0,0,8,0,9},
+{0,7,7,7,7,7,7,0},
+{0,7,0,0,7,0,7,0},
+{0,7,0,0,7,0,7,0},
+{0,7,0,0,7,0,7,0},
+{0,7,0,0,7,0,7,0},
+{0,7,7,7,7,7,7,0},
+{9,8,0,0,0,0,0,9}
+};
+int f,c,fla,clm;
+int op;
+bool seguir=true;
 
 int main()
 {
 	
-	for(f=0;f<7;f++)
-	{
-		for(c=0;c=7;c++)
+	
+	do{
+		for(f=0;f<8;f++)
+	        {
+	        	for(int c=0;c<8;c++)
+		        {
+		           cout<<m1[f][c]<<"   ";
+		           if(f<8){
+		           	cout<<"|   ";
+		           }
+	     	}
+		cout<<endl;	
+		cout<<endl;
+	} 
+	
+	
+		cout<<"Menu de opciones "<<endl;
+		cout<<"1. Parquear vehiculo"<<endl;
+		cout<<"2. Retirar el vehiculo"<<endl;
+		cout<<"3. Motrar el vehiculo"<<endl;
+		cout<<"7. Salir"<<endl;
+		cout<<"Ingrese la opcion"<<endl;
+		cin>>op;
+		
+	switch(op)
 		{
-			cout<<"ingrese elemento ["<<f<<"]["<<c<<"]"<<endl;
+	
+			case 1:system("cls"); 
+			       cout<<"escriba la coordenada donde quiere parquear el vehiculo "<<endl;
+			       cout<<"numero de la fila: "<<endl;
+			       cin>>fla;
+			       cout<<"numero de la columna: "<<endl;
+			       cin>>clm;
+			       
+			     m1[fla][clm] = 1;
+			     
+			     
+	        
+
 			
-			cin>>m1[f][c];
-		}
-	}
-	
-	for(f=0;f<7;f++)
-	{
-		for(c=0;c=7;c++)
-		{
-			cout<<m1[f][c]<<endl;
-		}
-		cout<<"/n";
-	}
-	
+			
+			
+			       break;
+			       
+		    case 2:system("cls");
+			
+			
+			
+			       break;
+			       
+		    case 3:system("cls");
+			
+			
+			
+			       break;
+			       
+			case 7:seguir=false;
+			       break;  
+     	}
+     	
+     }
+     	
+	while(seguir==true);
 	
 }
