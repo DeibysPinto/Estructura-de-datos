@@ -20,24 +20,10 @@ int main()
 	
 	
 	do{
-		for(f=0;f<8;f++)
-	        {
-	        	for(int c=0;c<8;c++)
-		        {
-		           cout<<m1[f][c]<<"   ";
-		           if(f<8){
-		           	cout<<"|   ";
-		           }
-	     	}
-		cout<<endl;	
-		cout<<endl;
-	} 
-	
-	
 		cout<<"Menu de opciones "<<endl;
 		cout<<"1. Parquear vehiculo"<<endl;
 		cout<<"2. Retirar el vehiculo"<<endl;
-		cout<<"3. Motrar el vehiculo"<<endl;
+		cout<<"3. Mostrar parqueadero"<<endl;
 		cout<<"7. Salir"<<endl;
 		cout<<"Ingrese la opcion"<<endl;
 		cin>>op;
@@ -45,33 +31,67 @@ int main()
 	switch(op)
 		{
 	
-			case 1:system("cls"); 
+			case 1:
 			       cout<<"escriba la coordenada donde quiere parquear el vehiculo "<<endl;
 			       cout<<"numero de la fila: "<<endl;
 			       cin>>fla;
 			       cout<<"numero de la columna: "<<endl;
 			       cin>>clm;
 			       
-			     m1[fla][clm] = 1;
-			     
-			     
-	        
-
-			
-			
-			
+			       fla -= 1;
+                   clm -= 1;
+                   
+                   if (fla <0 || fla >=8 || clm <0 || clm >=8){
+                   	cout<<"Coordenadas fuera de rango, ingrese una valida"<<endl;
+				   }
+                   else if(m1[fla][clm] !=0){
+                   	cout<<"En este lugar no se puede parquear"<<endl;
+				   }
+				   else {
+				   	cout<<"Usted parqueo en la fila "<<fla+1<<" y la columna "<<clm+1<<endl<<endl;
+				   	m1[fla][clm] = 1;
+				   }
+		
 			       break;
 			       
-		    case 2:system("cls");
-			
-			
-			
+		    case 2: 
+		           cout<<"Escriba la coordenada de donde quiere retirar el vehiculo: "<<endl;
+			       cout<<"Numero de la fila: "<<endl;
+			       cin>>fla;
+			       cout<<"Numero de la columna: "<<endl;
+			       cin>>clm;
+			       
+			       fla -= 1;
+                   clm -= 1;
+                   
+                   if (fla <0 || fla >=8 || clm <0 || clm >=8){
+                   	cout<<"Coordenadas fuera de rango, ingrese una valida"<<endl;
+				   }
+                   else if(m1[fla][clm] !=1){
+                   	cout<<"En este lugar no hay vehiculos"<<endl;
+				   }
+				   else {
+				   	cout<<"Usted retiro el vehiculo de la fila "<<fla+1<<" y columna "<<clm+1<<endl<<endl;
+				   	m1[fla][clm] = 0;
+				   }
+		
 			       break;
+		    	   
 			       
 		    case 3:system("cls");
-			
-			
-			
+		          for(f=0;f<8;f++)
+	              {
+	               for(int c=0;c<8;c++)
+		           {
+		             cout<<m1[f][c]<<"   ";
+		             if(f<8){
+		             	cout<<"|   ";
+		              }
+	            	}
+	            	cout<<endl;	
+		            cout<<endl;
+	              }
+		
 			       break;
 			       
 			case 7:seguir=false;
