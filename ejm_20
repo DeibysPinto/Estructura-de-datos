@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+struct elemento {
+    int numero;
+    elemento *sgte;
+	};
+
+int i;
+struct elemento *principal, *pfinal, *pauxiliar;
+
+void insertar_lista(int valor)
+{
+	if (pinicial==NULL)
+	{
+		pinicial=new elemento();
+		pinicial->numero=valor;
+		pfinal=pinicial;
+	}
+	else
+	{
+		pauxiliar=new elemento();
+		pfinal->sgte=pauxiliar;
+		pauxiliar->numero=valor;
+		pfinal=pauxiliar;
+	}
+	pfinal->sgte=NULL;
+}
+
+int main()
+{
+	int valor;
+	for (int y=1;y<=5;y++)
+	{
+		cout<<"ingtrese elemento "<<endl;
+		//cin>>valor;
+		valor=y;
+		insertar_lista(valor);
+	}
+}
