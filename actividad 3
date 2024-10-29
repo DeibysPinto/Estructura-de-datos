@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+struct Estudiantes {
+	float notas;
+	float definitiva;
+	Estudiantes *sgte;
+};
+
+float i;
+struct Estudiantes *pinicial, *pfinal, *pauxiliar;
+
+void insertar_lista(float valor1,float valor2,float valor3,float definitiva)
+{
+	if (pinicial==NULL)
+	{
+		pinicial=new Estudiantes();
+		pinicial->notas=valor1;
+		pinicial->notas=valor2;
+		pinicial->notas=valor3;
+		pinicial->definitiva=definitiva;
+		pfinal=pinicial;
+	}
+	else 
+	{
+		pauxiliar=new Estudiantes();
+		pfinal->sgte=pauxiliar;
+		pauxiliar->notas=valor1;
+		pauxiliar->notas=valor2;
+		pauxiliar->notas=valor3;
+		pauxiliar->definitiva=definitiva;
+		pfinal=pauxiliar;
+	}
+	pfinal->sgte=NULL;
+}
+
+void mostrar()
+{
+	pauxiliar=pinicial;
+	i=1;
+	for (float i=1;i<=10;i++)
+	{
+		while (pauxiliar!=NULL)
+		{
+			cout<<" Estudiante "<<i<<" : "<<pauxiliar->notas<<endl;
+			pauxiliar=pauxiliar->sgte;
+		}
+		
+	}
+}
+int main()
+{
+	float valor1;
+	float valor2;
+	float valor3;
+	float definitiva;
+	
+	for (float y=1;y<=10;y++)
+	{
+		cout<<"estudiante "<<y<<" : "<<endl;
+		cout<<"ingrese nota 1 "<<endl;
+		cin>>valor1;
+		cout<<"ingrese nota 2 "<<endl;
+		cin>>valor2;
+		cout<<"ingrese nota 3 "<<endl;
+		cin>>valor3;
+		definitiva=(valor1+valor2+valor3)/3;
+		cout<<"definitiva: "<<definitiva<<endl;
+		insertar_lista(valor1,valor2,valor3,definitiva);
+	}
+	
+	mostrar();	
+}
