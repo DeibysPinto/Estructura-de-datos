@@ -7,7 +7,7 @@ struct elemento {
 	};
 
 int i;
-struct elemento *principal, *pfinal, *pauxiliar;
+struct elemento *pinicial, *pfinal, *pauxiliar;
 
 void insertar_lista(int valor)
 {
@@ -32,7 +32,7 @@ int main()
 	int valor;
 	for (int y=1;y<=5;y++)
 	{
-		cout<<"ingtrese elemento "<<endl;
+		cout<<"ingrese elemento "<<endl;
 		//cin>>valor;
 		valor=y;
 		insertar_lista(valor);
