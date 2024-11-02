@@ -3,16 +3,16 @@ using namespace std;
 
 string m1[11][11]={
 {"   ","0","1","2","3","4","5","6","7","8","9"},
-{"  0","A","A","A","A","A","A","A","A","A","A"},
-{"  1","A","A","A","A","A","A","A","A","A","A"},
-{"  2","A","A","A","A","A","A","A","A","A","A"},
-{"  3","A","A","A","A","A","A","A","A","A","A"},
-{"  4","A","A","A","A","A","A","A","A","A","A"},
+{"  0","C","A","A","A","A","A","D","D","D","A"},
+{"  1","C","A","A","A","A","A","A","A","A","A"},
+{"  2","C","A","A","A","A","A","A","A","A","A"},
+{"  3","C","A","A","A","A","A","A","A","A","A"},
+{"  4","A","A","A","P","P","P","P","P","A","A"},
 {"  5","A","A","A","A","A","A","A","A","A","A"},
 {"  6","A","A","A","A","A","A","A","A","A","A"},
 {"  7","A","A","A","A","A","A","A","A","A","A"},
-{"  8","A","A","A","A","A","A","A","A","A","A"},
-{"  9","A","A","A","A","A","A","A","A","A","A"}};
+{"  8","A","A","A","A","A","A","A","S","S","A"},
+{"  9","B","A","A","A","A","A","A","A","A","A"}};
 
 string m2[11][11]={
 {"   ","0","1","2","3","4","5","6","7","8","9"},
@@ -28,22 +28,29 @@ string m2[11][11]={
 {"  9","A","A","A","A","A","A","A","A","A","A"}};
 
 string barcos [6][3]={
-{"  Naves en la matriz","Tamaño","Letra identificación"},
-{"  Portaviones","0","0"},
-{"  Crucero","0","0"},
-{"  Destructor","0","0"},
-{"  Submarino","0","0"},
-{"  Bote","0","0"}};
+{"  Naves en la matriz","  Tamano","  Letra identificacion"},
+{"  Portaviones       ","    5   ","           P          "},
+{"  Crucero           ","    4   ","           C          "},
+{"  Destructor        ","    3   ","           D          "},
+{"  Submarino         ","    2   ","           S          "},
+{"  Bote              ","    1   ","           B          "}};
 
 int f,c,fla,clm;
+string X = "X";
+string I = "I";
+string A = "A";
+string password = "mauricio123";
+string inputpassword;
+int totalbarcos = 15;
+int impactoslogrados = 0;
 int op;
 bool seguir=true;
 
 int main()
 {
 	
+	
 	do{
-		system("cls");
 		cout<<"Matriz de jugador: "<<endl<<endl;
 		
 		for(f=0;f<11;f++)
@@ -59,23 +66,15 @@ int main()
 		        cout<<endl;
 	    }
 	    
-	    for(f=0;f<6;f++)
-	    {
-	        for(int c=0;c<3;c++)
-		     {
-		        cout<<barcos[f][c]<<"   ";
-		        if(f<6)
-				{cout<<"|   ";
-		                }  
-	         }
-	            cout<<endl;	
-		        cout<<endl;
-	    }
-		
+	    cout<<"Total impactos para ganar : "<<totalbarcos<<endl;
+	    cout<<"Impactos conseguidos : "<<impactoslogrados<<endl<<endl;
+	    
 		cout<<"Menu de opciones "<<endl;
 		cout<<"1. Jugar"<<endl;
-		cout<<"2. Mostrar matriz principal"<<endl;
-		cout<<"3. Salir"<<endl;
+		cout<<"2. Mostrar matriz de admin"<<endl;
+		cout<<"3. Instrucciones"<<endl;
+		cout<<"4. Limpiar"<<endl;
+		cout<<"5. Salir"<<endl;
 		cout<<"Ingrese la opcion"<<endl;
 		cin>>op;
 		
@@ -83,16 +82,99 @@ int main()
 		{
 	
 			case 1:
+			       cout<<"escriba la coordenada donde quiere disparar "<<endl;
+			       cout<<"numero de la fila: "<<endl;
+			       cin>>fla;
+			       cout<<"numero de la columna: "<<endl;
+			       cin>>clm;
 			       
+			       fla += 1;
+                   clm += 1;
+                   
+                   if (fla <0 || fla >=11 || clm <0 || clm >=11){
+                   	cout<<"Coordenadas fuera de rango, ingrese una valida"<<endl;
+				   }
+				   else if (m2[fla][clm] !=A){
+				   	cout<<"Ya disparaste en este lugar"<<endl;
+				   }
+				   
+				   else if (m1[fla][clm] !=A){
+				   	cout<<"Impacto confirmado en la fila "<<fla-1<<" y la columna "<<clm-1<<endl;
+				   	m2[fla][clm] = I ;
+				   	impactoslogrados++;
+				   }
+				   
+				   else {
+				   	cout<<"Usted disparo en la fila "<<fla-1<<" y la columna "<<clm-1<<endl<<endl;
+				   	m2[fla][clm] = X ;
+	               }
+	               
+	               if (impactoslogrados >= totalbarcos){
+				   	cout<<"Felicidades has hundido todos los barcos"<<endl;
+				   	cout<<"Has destruido todos los barcos"<<endl;
+				   	cout<<"Impacto logrados: "<<impactoslogrados<<endl;
+				   	seguir=false;
+				   	
+				   	break;
+				   	
+				   }
 		
 			       break;
 			       
 		    case 2: 
-		           
+			       cout<<"Ingrese la contraseña para ver la matriz de admin : "<<endl;;
+			       cin>>inputpassword;
+			       
+			       if(inputpassword == password){
+			       	
+			       	  for(f=0;f<11;f++){
+	                     for(int c=0;c<11;c++){
+		                    cout<<m1[f][c]<<"   ";
+		                    if(f<11){
+							cout<<"|   ";
+		                    }  
+	                     }
+	                   cout<<endl;	
+		               cout<<endl;
+	                  }
+			       	
+				   }
+				   
+				   else {
+				   	cout<<"Contraseña incorrecta"<<endl<<endl;
+				   }
+	    
+	    system("pause");
 		
 			       break;
+			
+			case 3:
+				  cout<<"Instrucciones: "<<endl;
+				  
+				  for(f=0;f<6;f++){
+				  	
+	               for(int c=0;c<3;c++){
+		             cout<<barcos[f][c]<<"   ";
+		             if(f<6){
+					  cout<<"|";
+		             }  
+	               }
+	               cout<<endl;	
+		           cout<<endl;
+	              }
+	              
+	              cout<<" A = Agua sin impactos"<<endl;
+	              cout<<" I = Impacto confirmado"<<endl;
+	              cout<<" X = No hubo impacto"<<endl<<endl;
+	              
+	              system("pause");
+	              
+				   break;
+				   
+			case 4: system("cls");
+			       break;
 			       
-			case 3:seguir=false;
+			case 5:seguir=false;
 			       break;  
      	}
      	
